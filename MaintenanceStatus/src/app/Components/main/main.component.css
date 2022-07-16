@@ -6,7 +6,7 @@ table {
 }
 
 td, th {
-  border: 1px solid #dddddd;
+  border: 3px solid #000000;
   text-align: left;
   padding: 8px;
 }
@@ -25,5 +25,10 @@ th{
 
 .time-to-ready{
   white-space: nowrap;
+}
+
+td{
+  white-space:pre-line;
+
 }
 

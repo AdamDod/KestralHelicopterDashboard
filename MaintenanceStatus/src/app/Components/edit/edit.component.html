@@ -24,11 +24,19 @@
       <div>Contract - <input type="text" [(ngModel)]="vic.contract"></div>
       </td>
     <td><input type="text" [(ngModel)]="vic.location"></td>
-    <td><textarea type="text" [(ngModel)]="vic.config" rows="10"></textarea></td>
-    <td><input type="number" min="-1" [(ngModel)]="vic.timeToReady">(-1 for unknown)</td>
+    <td><textarea type="text" [(ngModel)]="vic.config" rows="10"></textarea>
+      <pre>&lt;br&gt; = Paragraph</pre>
+    </td>
+    <td><input type="number" min="-1" [(ngModel)]="vic.timeToReady">
+      <p>Red = -1</p>
+      <p>Yellow = >1</p>
+      <p>Green = 0</p>
+    </td>
     <td><input type="text" [(ngModel)]="vic.mr"></td>
     <td><input type="text" [(ngModel)]="vic.maintenance"></td>
-    <td><textarea type="text" [(ngModel)]="vic.notes" rows="10"></textarea></td>
+    <td><textarea type="text" [(ngModel)]="vic.notes" rows="10"></textarea>
+      <pre>&lt;br&gt; = Paragraph</pre>
+    </td>
     <td><button (click)="remove(indexOfelement)">Remove</button></td>
   </tr>
 </table>

@@ -24,11 +24,11 @@
         <div><h3>{{vic.contract}}</h3></div>
         </td>
       <td><h2>{{vic.location}}</h2></td>
-      <td><h3>{{vic.config}}</h3></td>
+      <td><h3 innerHTML="{{vic.config}}"></h3></td>
       <td class="time-to-ready" [ngStyle]="{'background-color': backgroundColour(vic.timeToReady)}"><h1>{{timeToReady(vic.timeToReady)}}</h1></td>
       <td><h2>{{vic.mr}}</h2></td>
       <td><h2>{{vic.maintenance}}</h2></td>
-      <td><h3>{{vic.notes}}</h3></td>
+      <td><h3 innerHTML="{{vic.notes}}"></h3></td>
     </tr>
   </table>
 </div>
