@@ -1,0 +1,36 @@
+<body>
+  <div>
+    <img src="../../../assets/Kestral_Logo.png" alt="Kestral Logo">
+    <h1>Maintenance Status Information</h1>
+    <button (click)="navToEdit()">Edit</button>
+    <input [(ngModel)]="pin" type="text" placeholder="Pin">
+    <button (click)="scroll = !scroll">Toggle Auto Scroll</button>
+  </div>
+<div class="table">
+  <table>
+    <tr>
+      <th>Registration</th>
+      <th>Location</th>
+      <th>Config</th>
+      <th class="time-to-ready">Time To Ready</th>
+      <th>MR</th>
+      <th>Maintenance</th>
+      <th>Notes</th>
+    </tr>
+    <tr *ngFor="let vic of vehicles">
+      <td>
+        <div><h3>{{vic.type}}</h3></div>
+        <div class="rego"><h1>{{vic.registration}}</h1></div>
+        <div><h3>{{vic.contract}}</h3></div>
+        </td>
+      <td><h2>{{vic.location}}</h2></td>
+      <td><h3>{{vic.config}}</h3></td>
+      <td class="time-to-ready" [ngStyle]="{'background-color': backgroundColour(vic.timeToReady)}"><h1>{{timeToReady(vic.timeToReady)}}</h1></td>
+      <td><h2>{{vic.mr}}</h2></td>
+      <td><h2>{{vic.maintenance}}</h2></td>
+      <td><h3>{{vic.notes}}</h3></td>
+    </tr>
+  </table>
+</div>
+
+</body>

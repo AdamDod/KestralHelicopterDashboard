@@ -1,0 +1,34 @@
+<div>
+  <img src="../../../assets/Kestral_Logo.png" alt="Kestral Logo">
+  <h1>Maintenance Status Information</h1>
+  <button (click)="return()">Return</button>
+  <button (click)="newVic()">New Vehicle</button>
+  <button (click)="save()">save</button>
+</div>
+
+<table>
+  <tr>
+    <th>Registration</th>
+    <th>Location</th>
+    <th>Config</th>
+    <th class="time-to-ready">Time To Ready</th>
+    <th>MR</th>
+    <th>Maintenance</th>
+    <th>Notes</th>
+    <th>Remove</th>
+  </tr>
+  <tr *ngFor="let vic of vehicles;let indexOfelement=index;">
+    <td>
+      <div>Type - <input type="text" [(ngModel)]="vic.type"></div>
+      <div class="rego">Rego - <input id="rego" type="text" [(ngModel)]="vic.registration"></div>
+      <div>Contract - <input type="text" [(ngModel)]="vic.contract"></div>
+      </td>
+    <td><input type="text" [(ngModel)]="vic.location"></td>
+    <td><textarea type="text" [(ngModel)]="vic.config" rows="10"></textarea></td>
+    <td><input type="number" min="-1" [(ngModel)]="vic.timeToReady">(-1 for unknown)</td>
+    <td><input type="text" [(ngModel)]="vic.mr"></td>
+    <td><input type="text" [(ngModel)]="vic.maintenance"></td>
+    <td><textarea type="text" [(ngModel)]="vic.notes" rows="10"></textarea></td>
+    <td><button (click)="remove(indexOfelement)">Remove</button></td>
+  </tr>
+</table>
