@@ -1,7 +1,10 @@
 <body>
-  <div>
-    <img src="../../../assets/Kestral_Logo.png" alt="Kestral Logo">
+  <div class="header">
+    <div class="img-container"><img src="../../../assets/Kestral_Logo.png" alt="Kestral Logo"></div>
+
     <h1>Maintenance Status Information</h1>
+  </div>
+  <div>
     <button (click)="navToEdit()">Edit</button>
     <input [(ngModel)]="pin" type="text" placeholder="Pin">
     <button (click)="scroll = !scroll">Toggle Auto Scroll</button>

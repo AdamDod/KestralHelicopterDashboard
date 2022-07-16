@@ -1,8 +1,19 @@
+body{
+  margin:20px;
+}
+
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
   height: min-content;
+}
+
+table th{
+  position: -webkit-sticky;
+  position: sticky;
+  top: 140px;
+  background: white;
 }
 
 td, th {
@@ -16,7 +27,7 @@ tr:nth-child(even) {
 }
 
 th{
-  font-size: larger;
+  font-size: 30px;
 }
 
 .rego{
@@ -31,4 +42,12 @@ td{
   white-space:pre-line;
 
 }
+
+.header{
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+  background: white;
+}
+
 
