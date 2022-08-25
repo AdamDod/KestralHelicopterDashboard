@@ -1,0 +1,25 @@
+<body>
+  <div class="container" id="title-card">
+    <h1 class="title">Kestrel</h1>
+  </div>
+  <div class="container" *ngFor="let vic of vehicles">
+    <div class="top">
+      <div class="details">
+        <h1>{{vic.registration}}</h1>
+        <h3>{{vic.type}}</h3>
+        <h3>{{vic.contract}}</h3>
+      </div>
+      <div class="hours" [ngStyle]="{'background-color': vic.statusColour}">
+        <h2 *ngIf="vic.hoursShown">{{vic.timeToReady}}</h2>
+        <h2 *ngIf="vic.hoursShown">HOURS</h2>
+      </div>
+    </div>
+    <div class="bottom">
+      <div>
+        <p class="desc" innerHTML="{{vic.config}}">
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+

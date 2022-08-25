@@ -1,0 +1,58 @@
+.container{
+  width:300px;
+  min-height:300px;
+  border-radius: 0px 29px;
+  background-color:rgb(188, 188, 188);
+  margin:15px;
+}
+
+.top{
+  display: flex;
+  background-color: grey;
+  border-radius:0px 50px 0px 0px;
+}
+
+.details{
+  width:65%;
+  margin-left:20px;
+}
+
+.hours{
+  width:40%;
+  border-radius:0px 25px 0px 29px;
+  padding-top: 20px;
+  text-align:center;
+}
+
+.bottom{
+  padding: 15px;
+}
+
+body{
+  display: flex;
+  flex-wrap: wrap;
+  font-family: monospace;
+}
+
+.title{
+  text-align: center;
+  padding: 100px 0px;
+  font-size: 40px;
+}
+
+#title-card{
+  background-color: #72CEF5;
+}
+
+.desc{
+  margin: 0px;
+}
+
+h3{
+  margin: 5px 0px;
+}
+
+h1{
+  margin: 10px 0px;
+}
+

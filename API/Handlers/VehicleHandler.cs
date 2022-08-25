@@ -31,6 +31,8 @@ namespace API.Handlers
                                 MR = reader.GetString(7),
                                 Maintenance = reader.GetString(8),
                                 Notes = reader.GetString(9),
+                                StatusColour = reader.GetString(10),
+                                HoursShown = reader.GetBoolean(11)
                             });  
                         }
                         conn.Close();
@@ -75,6 +77,8 @@ namespace API.Handlers
                     command.Parameters.AddWithValue("@pMR", v.MR);
                     command.Parameters.AddWithValue("@pMaintenance", v.Maintenance);
                     command.Parameters.AddWithValue("@pNotes", v.Notes);
+                    command.Parameters.AddWithValue("@pStatusColour", v.StatusColour);
+                    command.Parameters.AddWithValue("@pHoursShown", v.HoursShown);
 
                     command.ExecuteNonQuery();
                     conn.Close();

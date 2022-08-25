@@ -27,10 +27,18 @@
     <td><textarea type="text" [(ngModel)]="vic.config" rows="10"></textarea>
       <pre>&lt;br&gt; = Paragraph</pre>
     </td>
-    <td><input type="number" min="-1" [(ngModel)]="vic.timeToReady">
-      <p>Red = -1</p>
-      <p>Yellow = >1</p>
-      <p>Green = 0</p>
+    <td>
+      <input type="number" min="-1" [(ngModel)]="vic.timeToReady">
+      <select [(ngModel)]="vic.statusColour">
+        <option value="red">Red</option>
+        <option value="yellow">Yellow</option>
+        <option value="green">Green</option>
+        <option value="blue">Blue</option>
+        <option value="purple">Purple</option>
+        <option value="orange">Orange</option>
+      </select>
+      <label for="hoursShown">Show Hours</label>
+      <input name="hoursShown" type="checkbox" [(ngModel)]="vic.hoursShown">
     </td>
     <td><input type="text" [(ngModel)]="vic.mr"></td>
     <td><input type="text" [(ngModel)]="vic.maintenance"></td>

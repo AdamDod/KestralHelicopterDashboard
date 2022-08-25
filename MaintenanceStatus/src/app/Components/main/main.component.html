@@ -4,14 +4,23 @@
 
     <h1>Maintenance Status Information</h1>
   </div>
-  <div>
-    <button (click)="navToEdit()">Edit</button>
-    <input [(ngModel)]="pin" type="text" placeholder="Pin">
+  <ng-container *ngIf="auth.isAuthenticated$ | async; else loggedOut">
+    <button (click)="auth.logout({ returnTo: document.location.origin })">
+      Log out
+    </button>
+  </ng-container>
+
+  <ng-template #loggedOut>
+    <button (click)="auth.loginWithRedirect()">Log in</button>
+  </ng-template>
+  <div class="scrolling">
     <button (click)="scroll = !scroll">Toggle Auto Scroll</button>
+    <p *ngIf="scroll">Currently Auto Scrolling</p>
+    <p *ngIf="!scroll">Not Auto Scrolling</p>
   </div>
 <div class="table">
   <table>
-    <tr>
+    <tr class="table-headers">
       <th>Registration</th>
       <th>Location</th>
       <th>Config</th>
@@ -28,7 +37,7 @@
         </td>
       <td><h2>{{vic.location}}</h2></td>
       <td><h3 innerHTML="{{vic.config}}"></h3></td>
-      <td class="time-to-ready" [ngStyle]="{'background-color': backgroundColour(vic.timeToReady)}"><h1>{{timeToReady(vic.timeToReady)}}</h1></td>
+      <td class="time-to-ready" [ngStyle]="{'background-color': vic.statusColour}"><h2>{{timeToReady(vic.timeToReady)}}</h2></td>
       <td><h2>{{vic.mr}}</h2></td>
       <td><h2>{{vic.maintenance}}</h2></td>
       <td><h3 innerHTML="{{vic.notes}}"></h3></td>

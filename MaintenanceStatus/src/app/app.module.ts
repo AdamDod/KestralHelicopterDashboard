@@ -7,12 +7,15 @@ import { AppComponent } from './app.component';
 import { MainComponent } from './Components/main/main.component';
 import { HttpClientModule} from '@angular/common/http';
 import { EditComponent } from './Components/edit/edit.component';
+import { AuthModule } from '@auth0/auth0-angular';
+import { DashboardComponent } from './Components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
-    EditComponent
+    EditComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -20,6 +23,10 @@ import { EditComponent } from './Components/edit/edit.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    AuthModule.forRoot({
+      domain: 'kestrelmaintenance.au.auth0.com',
+      clientId: 'BahPNQeX0XhB33cCBnmhRt6ujsWUJHzw'
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]

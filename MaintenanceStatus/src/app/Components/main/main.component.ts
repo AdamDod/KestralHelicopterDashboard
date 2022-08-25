@@ -1,10 +1,10 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener, Inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Vehicle } from 'src/app/Models/Vehicle';
 import { VehiclesService } from 'src/app/Service/vehicles.service';
 import * as signalR from '@microsoft/signalr';
-
-
+import { DOCUMENT } from '@angular/common';
+import { AuthService } from '@auth0/auth0-angular';
 
 
 @Component({
@@ -19,13 +19,14 @@ export class MainComponent implements OnInit {
   xpixl:number;
   timeoutID:any;
   screenHeight:any;
-  scroll:boolean = false;
+  scroll:boolean = true;
   canStop:boolean = false;
 
 
-  constructor(public _vehicles:VehiclesService, private _router:Router) {
+  constructor(public _vehicles:VehiclesService, private _router:Router,@Inject(DOCUMENT) public document: Document, public auth: AuthService) {
     this.xpixl = 0;
-    setInterval(()=> { this.winScroll() },  2000);
+    setInterval(()=> { this.winScroll() },  4000);
+    setInterval(()=> { this.restartConnection() },  20000);
    }
 
   ngOnInit(): void {
@@ -43,6 +44,13 @@ export class MainComponent implements OnInit {
     }
   }
 
+  restartConnection(){
+    this.load();
+    this.hubConnection.stop();
+    this.startConnection();
+    this.addCellChangeListener();
+  }
+
   load(){
     this._vehicles.getAllVehicles().subscribe(unpackedVehicles => this.vehicles = unpackedVehicles,null,()=>{
       this.screenHeight = window.innerHeight;
@@ -54,20 +62,6 @@ export class MainComponent implements OnInit {
       return ''
     }else{
       return time.toString() + '- Hours';
-    }
-  }
-
-  backgroundColour(time:number):string{
-    if (time == -1) {
-      return 'red';
-    }
-    if(time == 0){
-      return 'green';
-    }
-    if(time >0){
-      return 'yellow'
-    }else{
-      return 'purple'
     }
   }
 

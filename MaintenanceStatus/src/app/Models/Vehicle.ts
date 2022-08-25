@@ -8,5 +8,7 @@ export class Vehicle {
   mr:string;
   maintenance:string;
   notes:string;
+  statusColour:string;
+  hoursShown:boolean;
 
 }

@@ -10,5 +10,7 @@ public class Vehicle
     public string MR { get; set; }
     public string Maintenance { get; set; }
     public string Notes { get; set; }
+    public string StatusColour {get;set;}
+    public Boolean HoursShown {get;set;}
 
 }

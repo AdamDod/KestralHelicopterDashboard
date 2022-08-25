@@ -28,3 +28,10 @@ SELECT * FROM [Vehicle]
 
 DELETE [Vehicle] FROM [Vehicle]
 -- Server=tcp:kestral.database.windows.net,1433;Initial Catalog=KestralHelicopters;Persist Security Info=False;User ID=adamadmin;Password=Move1234!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;
+
+
+ALTER TABLE [Vehicle] ADD [StatusColour] [NVARCHAR] (50);
+ALTER TABLE [Vehicle] ADD [HoursShown] bit;
+
+UPDATE [Vehicle] SET [HoursShown] = 1;
+UPDATE [Vehicle] SET [StatusColour] = 'yellow';

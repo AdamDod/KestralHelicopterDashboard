@@ -15,7 +15,7 @@ export class EditComponent implements OnInit {
 
   ngOnInit(): void {
     this.load();
-    
+
   }
 
   load(){
@@ -66,7 +66,9 @@ export class EditComponent implements OnInit {
       timeToReady:-1,
       mr:'',
       maintenance:'',
-      notes:''
+      notes:'',
+      statusColour:'',
+      hoursShown:true
     })
   }
 

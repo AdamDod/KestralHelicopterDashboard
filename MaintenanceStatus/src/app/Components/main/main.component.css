@@ -4,20 +4,19 @@ body{
 
 table {
   font-family: arial, sans-serif;
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0;
   width: 100%;
   height: min-content;
 }
 
 table th{
-  position: -webkit-sticky;
-  position: sticky;
   top: 140px;
   background: white;
 }
 
 td, th {
-  border: 3px solid #000000;
+  border: 2px solid #000000;
   text-align: left;
   padding: 8px;
 }
@@ -30,24 +29,21 @@ th{
   font-size: 30px;
 }
 
-.rego{
-
-}
-
-.time-to-ready{
-  white-space: nowrap;
-}
-
 td{
   white-space:pre-line;
 
 }
 
 .header{
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0px;
   background: white;
 }
 
+.scrolling{
+  display:flex;
+}
+
+.table-headers{
+  position:sticky;
+  top:0px;
+}
 
