@@ -37,7 +37,7 @@
         </td>
       <td><h2>{{vic.location}}</h2></td>
       <td><h3 innerHTML="{{vic.config}}"></h3></td>
-      <td class="time-to-ready" [ngStyle]="{'background-color': vic.statusColour}"><h2>{{timeToReady(vic.timeToReady)}}</h2></td>
+      <td class="time-to-ready" [ngStyle]="{'background-color': vic.statusColour}"><h2 *ngIf="vic.hoursShown">{{vic.timeToReady}} - Hours</h2></td>
       <td><h2>{{vic.mr}}</h2></td>
       <td><h2>{{vic.maintenance}}</h2></td>
       <td><h3 innerHTML="{{vic.notes}}"></h3></td>

@@ -57,14 +57,6 @@ export class MainComponent implements OnInit {
     });
   }
 
-  timeToReady(time:number):string{
-    if(time == -1){
-      return ''
-    }else{
-      return time.toString() + '- Hours';
-    }
-  }
-
   navToEdit(){
     if (this.pin != '') {
       if (this.pin == '2468') {
