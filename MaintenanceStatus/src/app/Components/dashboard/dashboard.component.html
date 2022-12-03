@@ -12,6 +12,7 @@
       <div class="hours" [ngStyle]="{'background-color': vic.statusColour}">
         <h2 *ngIf="vic.hoursShown">{{vic.timeToReady}}</h2>
         <h2 *ngIf="vic.hoursShown">HOURS</h2>
+        <div class="location"><h3>{{vic.location}}</h3></div>
       </div>
     </div>
     <div class="bottom">

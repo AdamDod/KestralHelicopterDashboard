@@ -10,6 +10,7 @@
   display: flex;
   background-color: grey;
   border-radius:0px 50px 0px 0px;
+  height:130px;
 }
 
 .details{
@@ -20,7 +21,7 @@
 .hours{
   width:40%;
   border-radius:0px 25px 0px 29px;
-  padding-top: 20px;
+  padding-top: 10px;
   text-align:center;
 }
 
@@ -55,4 +56,3 @@ h3{
 h1{
   margin: 10px 0px;
 }
-
