@@ -1,0 +1,29 @@
+.mat-mdc-form-field + .mat-mdc-form-field {
+  margin-left: 8px;
+}
+
+.expanded{
+  display: flex;
+}
+
+.field{
+  padding: 10px;
+  height: 100%;
+}
+
+.menu-btn{
+  margin: 10px;
+}
+
+.panel{
+  background-color: rgb(215, 215, 215);
+  margin: 10px;
+}
+
+.sub-field{
+  margin: 5px;
+}
+
+body{
+  margin:20px;
+}

@@ -1,0 +1,52 @@
+<body>
+  <div>
+    <img src="../../../assets/Kestral_Logo.png" alt="Kestral Logo">
+    <h1>Maintenance Status Information</h1>
+    <button class="menu-btn" mat-raised-button color="link" (click)="return()">Return</button>
+    <button class="menu-btn" mat-raised-button color="basic" (click)="newVic()">New Vehicle</button>
+    <button class="menu-btn" mat-raised-button color="primary" (click)="save()">save</button>
+  </div>
+  <mat-divider></mat-divider>
+
+    <mat-expansion-panel class="panel" *ngFor="let vic of vehicles;let indexOfelement=index;">
+        <mat-expansion-panel-header>
+          <div class="field">Rego - <input type="text" [(ngModel)]="vic.registration"></div>
+          <div class="field">Type - <input type="text" [(ngModel)]="vic.type"></div>
+          <div class="field">Contract - <input type="text" [(ngModel)]="vic.contract"></div>
+          <div class="field">Location - <input type="text" [(ngModel)]="vic.location"></div>
+        </mat-expansion-panel-header>
+        <div class="expanded">
+
+          <div class="field">
+            <div><h2>Config</h2></div>
+            <textarea type="text" [(ngModel)]="vic.config" rows="10"></textarea>
+            <pre>&lt;br&gt; = Paragraph</pre>
+          </div>
+          <div class="field">
+            <div><h2>Time To Ready</h2></div>
+            <div style="display:flex;flex-direction: column;">
+              <input class="sub-field" type="number" min="-1" [(ngModel)]="vic.timeToReady">
+              <select class="sub-field" [(ngModel)]="vic.statusColour">
+                <option value="red">Red</option>
+                <option value="yellow">Yellow</option>
+                <option value="green">Green</option>
+                <option value="lightblue">Blue</option>
+                <option value="plum">Purple</option>
+                <option value="orange">Orange</option>
+              </select>
+              <div>
+                <label for="hoursShown">Show Hours</label>
+                <input name="hoursShown" type="checkbox" [(ngModel)]="vic.hoursShown">
+              </div>
+            </div>
+
+          </div>
+          <div class="field"><div><h2>MR</h2></div><input type="text" [(ngModel)]="vic.mr"></div>
+          <div class="field"><div><h2>Maintenance</h2></div><input type="text" [(ngModel)]="vic.maintenance"></div>
+          <div class="field"><div><h2>Notes</h2></div><textarea type="text" [(ngModel)]="vic.notes" rows="10"></textarea>
+            <pre>&lt;br&gt; = Paragraph</pre>
+          </div>
+          <div class="field"><button mat-raised-button color="warn"(click)="remove(indexOfelement)">Remove</button></div>
+      </div>
+  </mat-expansion-panel>
+</body>
